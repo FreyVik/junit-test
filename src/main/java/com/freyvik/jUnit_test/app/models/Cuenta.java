@@ -15,7 +15,7 @@ public class Cuenta {
     }
 
     public void debito(BigDecimal monto) {
-        if (monto.compareTo(this.saldo) >= 0)
+        if (this.saldo.compareTo(monto) < 0)
             throw new InsufficientMoneyException("Dinero insuficiente");
 
         this.saldo = this.saldo.subtract(monto);

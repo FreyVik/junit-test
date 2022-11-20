@@ -10,6 +10,7 @@ import org.junit.jupiter.api.Test;
 import java.math.BigDecimal;
 
 import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.jupiter.api.Assumptions.*;
 
 class CuentaTest {
 
@@ -55,5 +56,17 @@ class CuentaTest {
         });
 
         assertEquals("Dinero insuficiente", exception.getMessage());
+    }
+
+    // With assume we can check nested things like external API
+    // If assume is false, the test is disabled automatically
+    @Test
+    void testAssumptions() {
+        boolean isDev = "dev".equals(System.getProperty("env"));
+
+        assumeTrue(isDev);
+        Cuenta cloneCuenta = new Cuenta("Frey", new BigDecimal("1500.27"));
+
+        assertEquals(cuenta, cloneCuenta);
     }
 }
