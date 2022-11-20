@@ -1,5 +1,7 @@
 package com.freyvik.jUnit_test.app.models;
 
+import com.freyvik.jUnit_test.app.exceptions.InsufficientMoneyException;
+
 import java.math.BigDecimal;
 
 public class Cuenta {
@@ -10,6 +12,17 @@ public class Cuenta {
     public Cuenta(String persona, BigDecimal saldo) {
         this.persona = persona;
         this.saldo = saldo;
+    }
+
+    public void debito(BigDecimal monto) {
+        if (monto.compareTo(this.saldo) >= 0)
+            throw new InsufficientMoneyException("Dinero insuficiente");
+
+        this.saldo = this.saldo.subtract(monto);
+    }
+
+    public void credito(BigDecimal monto) {
+        this.saldo = this.saldo.add(monto);
     }
 
     @Override
