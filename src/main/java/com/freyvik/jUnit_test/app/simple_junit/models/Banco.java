@@ -1,4 +1,4 @@
-package com.freyvik.jUnit_test.app.models;
+package com.freyvik.jUnit_test.app.simple_junit.models;
 
 import java.math.BigDecimal;
 

@@ -1,6 +1,6 @@
-package com.freyvik.jUnit_test.app.models;
+package com.freyvik.jUnit_test.app.simple_junit.models;
 
-import com.freyvik.jUnit_test.app.exceptions.InsufficientMoneyException;
+import com.freyvik.jUnit_test.app.simple_junit.exceptions.InsufficientMoneyException;
 
 import java.math.BigDecimal;
 

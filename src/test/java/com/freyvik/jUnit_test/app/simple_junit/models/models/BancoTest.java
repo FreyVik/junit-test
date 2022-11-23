@@ -1,14 +1,15 @@
-package com.freyvik.jUnit_test.app.models;
+package com.freyvik.jUnit_test.app.simple_junit.models.models;
 
 import static org.junit.jupiter.api.Assertions.*;
 
+import com.freyvik.jUnit_test.app.simple_junit.models.Banco;
+import com.freyvik.jUnit_test.app.simple_junit.models.Cuenta;
 import org.junit.jupiter.api.*;
 import org.junit.jupiter.api.condition.*;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.ValueSource;
 
 import java.math.BigDecimal;
-import java.util.Properties;
 
 public class BancoTest {
 

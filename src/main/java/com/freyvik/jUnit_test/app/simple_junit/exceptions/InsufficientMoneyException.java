@@ -1,4 +1,4 @@
-package com.freyvik.jUnit_test.app.exceptions;
+package com.freyvik.jUnit_test.app.simple_junit.exceptions;
 
 public class InsufficientMoneyException extends RuntimeException {
 

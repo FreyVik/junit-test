@@ -1,13 +1,12 @@
 
-package com.freyvik.jUnit_test.app.models;
+package com.freyvik.jUnit_test.app.simple_junit.models.models;
 
-import com.freyvik.jUnit_test.app.exceptions.InsufficientMoneyException;
-import org.junit.jupiter.api.AfterAll;
-import org.junit.jupiter.api.BeforeAll;
-import org.junit.jupiter.api.BeforeEach;
-import org.junit.jupiter.api.Test;
+import com.freyvik.jUnit_test.app.simple_junit.exceptions.InsufficientMoneyException;
+import com.freyvik.jUnit_test.app.simple_junit.models.Cuenta;
+import org.junit.jupiter.api.*;
 
 import java.math.BigDecimal;
+import java.util.concurrent.TimeUnit;
 
 import static org.junit.jupiter.api.Assertions.*;
 import static org.junit.jupiter.api.Assumptions.*;
@@ -33,7 +32,7 @@ class CuentaTest {
     }
 
     @Test
-    void testNombreCuenta() {
+    void testNombreCuenta(TestReporter testReporter) {
         assertEquals("Frey", cuenta.getPersona());
     }
 
@@ -68,5 +67,19 @@ class CuentaTest {
         Cuenta cloneCuenta = new Cuenta("Frey", new BigDecimal("1500.27"));
 
         assertEquals(cuenta, cloneCuenta);
+    }
+
+    @Tag("timeout")
+    @Test
+    @Timeout(5)
+    void testTimeout() throws InterruptedException {
+        TimeUnit.SECONDS.sleep(6);
+    }
+
+    @Tag("timeout")
+    @Test
+    @Timeout(5)
+    void testNoTimeout() throws InterruptedException {
+        TimeUnit.SECONDS.sleep(4);
     }
 }
