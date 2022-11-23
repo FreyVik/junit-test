@@ -1,8 +1,17 @@
 package com.freyvik.jUnit_test.app.springboot;
 
+import javax.persistence.*;
+
+@Entity
+@Table(name = "bancos")
 public class Banco {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+
     private String nombre;
+
+    @Column(name = "total_transfers")
     private Integer totalTransfers;
 
     public Banco() {

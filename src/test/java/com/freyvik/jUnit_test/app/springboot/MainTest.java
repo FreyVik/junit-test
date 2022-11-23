@@ -73,10 +73,10 @@ public class MainTest {
 
         verify(cuentaRepository, times(3)).findById(1L);
         verify(cuentaRepository, times(3)).findById(2L);
-        verify(cuentaRepository, times(2)).update(any(Cuenta.class));
+        verify(cuentaRepository, times(2)).save(any(Cuenta.class));
 
         verify(bancoRepository).findById(1L);
-        verify(bancoRepository).update(any(Banco.class));
+        verify(bancoRepository).save(any(Banco.class));
     }
 
     @Test
