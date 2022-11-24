@@ -2,17 +2,16 @@ package com.freyvik.jUnit_test.app.springboot;
 
 import static org.junit.jupiter.api.Assertions.*;
 import static org.mockito.Mockito.*;
-import static com.freyvik.jUnit_test.app.springboot.Datos.*;
+import static com.freyvik.jUnit_test.app.springboot.models.Datos.*;
 
 import com.freyvik.jUnit_test.app.springboot.exceptions.InsufficientMoneyException;
+import com.freyvik.jUnit_test.app.springboot.models.Banco;
+import com.freyvik.jUnit_test.app.springboot.models.Cuenta;
 import com.freyvik.jUnit_test.app.springboot.repositories.BancoRepository;
 import com.freyvik.jUnit_test.app.springboot.repositories.CuentaRepository;
 import com.freyvik.jUnit_test.app.springboot.services.CuentaService;
-import com.freyvik.jUnit_test.app.springboot.services.CuentaServiceImp;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-import org.mockito.InjectMocks;
-import org.mockito.Mock;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.boot.test.mock.mockito.MockBean;

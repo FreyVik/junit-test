@@ -1,4 +1,4 @@
-package com.freyvik.jUnit_test.app.springboot;
+package com.freyvik.jUnit_test.app.springboot.models;
 
 import java.math.BigDecimal;
 import java.util.Optional;

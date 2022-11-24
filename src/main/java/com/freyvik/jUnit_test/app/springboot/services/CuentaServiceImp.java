@@ -1,10 +1,11 @@
 package com.freyvik.jUnit_test.app.springboot.services;
 
-import com.freyvik.jUnit_test.app.springboot.Banco;
-import com.freyvik.jUnit_test.app.springboot.Cuenta;
+import com.freyvik.jUnit_test.app.springboot.models.Banco;
+import com.freyvik.jUnit_test.app.springboot.models.Cuenta;
 import com.freyvik.jUnit_test.app.springboot.repositories.BancoRepository;
 import com.freyvik.jUnit_test.app.springboot.repositories.CuentaRepository;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.math.BigDecimal;
 
@@ -19,23 +20,27 @@ public class CuentaServiceImp implements CuentaService {
     }
 
     @Override
+    @Transactional(readOnly = true)
     public Cuenta findById(Long id) {
         return cuentaRepository.findById(id).orElseThrow();
     }
 
     @Override
+    @Transactional(readOnly = true)
     public int resvisarTotalTransferencias(Long bancoId) {
         Banco banco = bancoRepository.findById(bancoId).orElseThrow();
         return banco.getTotalTransfers();
     }
 
     @Override
+    @Transactional(readOnly = true)
     public BigDecimal revisarSaldo(Long cuentaId) {
         Cuenta cuenta = cuentaRepository.findById(cuentaId).orElseThrow();
         return cuenta.getSaldo();
     }
 
     @Override
+    @Transactional
     public void transferir(Long numCuentaOrigen, Long numCuentaDestino, BigDecimal monto, Long bancoId) {
         Banco banco = bancoRepository.findById(bancoId).orElseThrow();
 

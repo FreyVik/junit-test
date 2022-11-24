@@ -1,9 +1,7 @@
 package com.freyvik.jUnit_test.app.springboot.repositories;
 
-import com.freyvik.jUnit_test.app.springboot.Banco;
+import com.freyvik.jUnit_test.app.springboot.models.Banco;
 import org.springframework.data.jpa.repository.JpaRepository;
-
-import java.util.List;
 
 public interface BancoRepository extends JpaRepository<Banco, Long> {
     // Implementeds by extension from JpaRepositoy

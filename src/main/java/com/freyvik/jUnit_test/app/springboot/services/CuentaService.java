@@ -1,6 +1,6 @@
 package com.freyvik.jUnit_test.app.springboot.services;
 
-import com.freyvik.jUnit_test.app.springboot.Cuenta;
+import com.freyvik.jUnit_test.app.springboot.models.Cuenta;
 
 import java.math.BigDecimal;
 

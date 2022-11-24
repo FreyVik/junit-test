@@ -1,10 +1,9 @@
 package com.freyvik.jUnit_test.app.springboot.repositories;
 
-import com.freyvik.jUnit_test.app.springboot.Cuenta;
+import com.freyvik.jUnit_test.app.springboot.models.Cuenta;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 
-import java.util.List;
 import java.util.Optional;
 
 public interface CuentaRepository extends JpaRepository<Cuenta, Long> {
