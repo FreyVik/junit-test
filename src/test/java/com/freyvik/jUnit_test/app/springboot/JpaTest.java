@@ -4,6 +4,7 @@ import static org.junit.jupiter.api.Assertions.*;
 
 import com.freyvik.jUnit_test.app.springboot.models.Cuenta;
 import com.freyvik.jUnit_test.app.springboot.repositories.CuentaRepository;
+import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.orm.jpa.DataJpaTest;
@@ -13,6 +14,7 @@ import java.util.List;
 import java.util.NoSuchElementException;
 import java.util.Optional;
 
+@Tag("JPA")
 @DataJpaTest
 public class JpaTest {
     @Autowired
